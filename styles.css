@@ -1,0 +1,279 @@
+/* ベーススタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* 薄い灰色（ほぼ白）*/
+    color: #333;
+    line-height: 1.6;
+}
+
+/* リンクのスタイル */
+a {
+    color: #007bff; /* 青系 */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* 全体レイアウト */
+.container {
+    display: flex;
+    max-width: 1400px; /* 適切な最大幅を設定 */
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* 目次 (サイドバー) */
+.sidebar {
+    width: 500px;
+    padding: 20px 0;
+    position: sticky; /* スクロールに合わせて動くように固定 */
+    top: 20px; /* 上端からの距離 */
+    height: fit-content; /* コンテンツに合わせて高さを調整 */
+    align-self: flex-start; /* コンテンツの上端に合わせる */
+    border-right: 1px solid #eee;
+}
+
+.sidebar h3 {
+    font-size: 1.2em;
+    color: #007bff; /* 青系 */
+    margin-top: 0;
+    padding-left: 20px;
+    border-left: 5px solid #007bff;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 8px 20px;
+    color: #555;
+    font-size: 0.95em;
+    border-left: 5px solid transparent;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #b3ddff; /* 青系の薄い背景 */
+    color: #014a97;
+    text-decoration: none;
+}
+
+/* メインコンテンツエリア */
+.content {
+    flex-grow: 1;
+    padding: 0 40px 40px 40px;
+}
+
+/* 見出し */
+h1 {
+    font-size: 2.5em;
+    color: #007bff; /* 青系 */
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333;
+    border-left: 8px solid #007bff;
+    padding-left: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #007bff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* リスト */
+ul, ol {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+/* 注意書き/特殊なボックス */
+.pdf-placeholder, .note-box, .warning, .formula, .consequence-box, .disclaimer {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.pdf-placeholder {
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px dashed #ccc;
+    color: #888;
+}
+
+.note-box {
+    background-color: #e9f5ff; /* 青系の薄い背景 */
+    border: 1px solid #007bff; /* 青系のライン */
+    color: #333;
+}
+
+.warning {
+    background-color: #fff0f0; /* 警告色 */
+    border: 1px solid #dc3545; /* 赤系のライン */
+    font-weight: bold;
+    color: #333;
+}
+
+.formula {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    font-family: monospace;
+    overflow-x: auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.consequence-box {
+    background-color: #ffeaea; /* 罰則など重要な内容 */
+    border: 1px solid #dc3545;
+    color: #333;
+}
+
+.disclaimer {
+    margin-top: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* テーブル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    /* 汎用テーブルの罫線を一旦解除/変更 */
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff; /* 青系 */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* ポイント一覧表の専用スタイルを追加 */
+.score-summary-table {
+    width: 100%;
+    margin: 20px auto; /* 表全体を中央寄せ */
+    /* border: 3px solid #007bff; */ /* ★全体の外枠の太さと色を設定 */
+    border-collapse: separate; /* セル間の線が独立できるように設定 */
+    border-spacing: 0; /* セル間の隙間をなくす */
+    text-align: center; /* 表の内容全体を中央寄せ */
+    font-weight: bold;
+}
+
+.score-summary-table th, .score-summary-table td {
+    padding: 10px 5px;
+    border: 1px solid #cce0ff; /* ★内側の罫線の太さと色を設定（薄い青） */
+    text-align: center; /* 内容をセル内で中央寄せ */
+}
+
+/* 順位のヘッダー行 */
+.score-summary-table thead th {
+    background-color: #007bff;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* 最初の列（順位Pt, キルPt） */
+.score-summary-table tbody tr td:first-child {
+    background-color: #e9f5ff; /* 行ヘッダーの背景色 */
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* 特定のリストの強調 */
+.banned-weapons ul, .banned-legends, .weapon-limit, .qualification-list, .rematch-list, .exception-list {
+    list-style-type: '・ '; /* 絵文字リストマーカー */
+    padding-left: 30px;
+}
+
+.banned-actions {
+    list-style-type: '・ ';
+    padding-left: 30px;
+}
+
+/* おれの名前 */
+#creator {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* スマホ対応 */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static; /* 固定を解除 */
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar h3 {
+        padding-left: 10px;
+    }
+
+    .sidebar nav ul {
+        display: flex; /* 目次を横並びにする（任意） */
+        flex-wrap: wrap;
+    }
+
+    .sidebar nav ul li {
+        margin: 5px;
+    }
+
+    .sidebar nav ul li a {
+        padding: 5px 10px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 3px;
+        background-color: #f0f0f0;
+    }
+
+    .sidebar nav ul li a:hover {
+        border-left: none;
+        border-bottom: 3px solid #007bff;
+        background-color: #e9f5ff;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
