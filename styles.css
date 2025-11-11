@@ -30,7 +30,7 @@ a:hover {
 
 /* 目次 (サイドバー) */
 .sidebar {
-    width: 500px;
+    width: 580px;
     padding: 20px 0;
     position: sticky; /* スクロールに合わせて動くように固定 */
     top: 20px; /* 上端からの距離 */
