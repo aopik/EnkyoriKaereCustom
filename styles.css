@@ -105,17 +105,10 @@ ul, ol {
 }
 
 /* 注意書き/特殊なボックス */
-.pdf-placeholder, .note-box, .warning, .formula, .consequence-box, .disclaimer {
+.note-box, .warning, .formula, .disclaimer {
     padding: 15px;
     margin: 20px 0;
     border-radius: 5px;
-}
-
-.pdf-placeholder {
-    background-color: #f0f0f0;
-    text-align: center;
-    border: 1px dashed #ccc;
-    color: #888;
 }
 
 .note-box {
@@ -131,7 +124,7 @@ ul, ol {
     color: #333;
 }
 
-.formula {
+.formula { /* ポイント数式 */
     background-color: #f0f0f0;
     padding: 10px 15px;
     font-family: monospace;
@@ -140,13 +133,7 @@ ul, ol {
     font-size: 20px;
 }
 
-.consequence-box {
-    background-color: #ffeaea; /* 罰則など重要な内容 */
-    border: 1px solid #dc3545;
-    color: #333;
-}
-
-.disclaimer {
+.disclaimer { /* えれくとろにっくあーつの出資受けてないやつ */
     margin-top: 40px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -212,13 +199,8 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-/* 特定のリストの強調 */
-.banned-weapons ul, .banned-legends, .weapon-limit, .qualification-list, .rematch-list, .exception-list {
-    list-style-type: '・ '; /* 絵文字リストマーカー */
-    padding-left: 30px;
-}
-
-.banned-actions {
+/* リスト */
+.list {
     list-style-type: '・ ';
     padding-left: 30px;
 }
