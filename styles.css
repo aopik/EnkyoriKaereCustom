@@ -9,13 +9,13 @@ body {
 }
 
 /* リンクのスタイル */
-a {
+.link {
     color: #007bff; /* 青系 */
     text-decoration: none;
     transition: color 0.3s;
 }
 
-a:hover {
+.link:hover {
     color: #0056b3;
     text-decoration: underline;
 }
@@ -211,6 +211,21 @@ tr:nth-child(even) {
     margin-top: 20px;
     font-size: 12px;
     color: #888;
+}
+
+/* 訂正 */
+.correction {
+    color: rgb(255, 54, 54);
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+.diff-added {
+    background-color: #b8f8b8; /* 薄い緑 */
+}
+.diff-removed {
+    background-color: #ffbebe; /* 薄い赤 */
+    text-decoration: line-through;
 }
 
 
